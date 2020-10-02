@@ -8,6 +8,7 @@ const passport = require("passport");
 const cors = require("cors");
 const mailer = require("./misc/mailer");
 const app = express();
+const dotnenv = require("dotenv").config();
 
 const nodemailer = require("nodemailer");
 
