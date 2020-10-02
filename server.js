@@ -19,10 +19,10 @@ mongoose
   .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: false,
   })
   .then(() => console.log("mongodbconnected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 app.get("/go/shop", (req, res) =>
   res.send("hello brother welcome to munshi event")
@@ -37,7 +37,7 @@ require("./config/passport")(passport);
 
 //use routes
 app.use("/api/users/", users);
-app.use("/api/event/", event);
+// app.use("/api/event/", event);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`server running on port ${port}`));
