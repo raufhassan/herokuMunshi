@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+/* const nodemailer = require("nodemailer");
 //const config = require("../misc/mailer");
 //const Mailer = require("../config/mailer");
 const transport = nodemailer.createTransport({
@@ -12,7 +12,7 @@ const transport = nodemailer.createTransport({
   //   tls: {
   //     rejectUnauthorized: false
   //   }
-});
+}); */
 
 /*  module.exports = {
   sendEmail(from, to, subject, text) {
@@ -32,12 +32,31 @@ const transport = nodemailer.createTransport({
   text: "its working"
 };
  */
-module.exports = function(mailOption) {
+/* module.exports = function(mailOption) {
   transport.sendMail(mailOption, function(err, data) {
     if (err) {
       console.log("Error occured", err);
     } else {
       console.log("success");
+    }
+  });
+}; */
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "munshi8921@gmail.com",
+    pass: "patience892",
+  },
+});
+module.exports = function (mailOption) {
+  transporter.sendMail(mailOption, function (err, data) {
+    if (err) {
+      console.log("Error occured", err);
+    } else {
     }
   });
 };
