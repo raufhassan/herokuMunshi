@@ -1,12 +1,13 @@
+const dotnenv = require("dotenv").config();
 module.exports = {
   oauth: {
     google: {
-      clientID: "124590655125-o8p9pkvv14q4i52rovt90uplevtfdla3.apps.googleusercontent.com",
-      clientSecret: "IpKI7zmCamMgsGWdQLxMJvVr",
+      clientID: process.env.oauthID,
+      clientSecret: process.env.oauthSecret,
     },
     facebook: {
-      clientID: "2654912131419789",
-      clientSecret: "6ac76e0f21e752eecbfa2683feb2b4cc",
+      clientID: process.env.fbID,
+      clientSecret: process.env.fbSecret,
     },
   },
 };
